@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SmartFarm AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas3d"></canvas>
+
+    <header class="header-3d">
+        <div class="header-content">
+            <div class="logo-3d">
+                <span class="logo-text">🌾 SmartFarm AI</span>
+                <span class="logo-subtitle">Farm Management Dashboard</span>
+            </div>
+            <nav class="nav-3d">
+                <a href="marketplace.html" class="nav-link">🛒 Marketplace</a>
+                <a href="#" id="logoutBtn" class="nav-link" style="color: #ff6b6b;">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 1400px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; flex-wrap: wrap; gap: 2rem;">
+            <div>
+                <h2 id="crop-title" style="text-align: left; margin: 0;">🌾 Farm Lifecycle Management</h2>
+                <p class="subtitle" style="text-align: left; margin: 0.5rem 0 0;">Manage and track all stages of your crop cycle with AI assistance.</p>
+            </div>
+            <div id="irrigation-info" style="text-align: right; background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+                <!-- Irrigation Details will be injected here -->
+            </div>
+        </div>
+
+        <!-- Weather & Irrigation Cards -->
+        <div class="dashboard-grid" style="margin-top: 2rem; margin-bottom: 3rem;">
+            <!-- Weather Data -->
+            <div class="stage-card" id="weather-card" style="border-left: 4px solid #3498db;">
+                <h3>🌦️ Live Weather</h3>
+                <p style="color: var(--text-secondary);">Loading real-time weather data...</p>
+            </div>
+            
+            <!-- Smart Irrigation -->
+            <div class="stage-card" id="irrigation-card" style="border-left: 4px solid var(--primary);">
+                <h3>💧 Smart Irrigation</h3>
+                <p style="color: var(--text-secondary);">Analyzing optimal water requirements...</p>
+            </div>
+        </div>
+
+        <!-- Disease Detection Section -->
+        <h2 style="text-align: left; margin-top: 3rem;">🔍 AI Disease Detection</h2>
+        <div class="dashboard-grid">
+            <div class="stage-card" style="grid-column: 1 / -1; border-left: 4px solid #9b59b6;">
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Upload a clear leaf image to instantly detect crop diseases using advanced AI analysis.</p>
+                <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                    <input type="file" id="disease-img" accept="image/*" style="padding: 0.8rem; background: rgba(46, 204, 113, 0.1); border: 2px dashed var(--primary); border-radius: 8px; color: var(--text-primary); cursor: pointer;">
+                    <button class="btn btn-primary" id="analyze-btn">🔬 Analyze Leaf</button>
+                </div>
+                <div id="disease-result" style="margin-top: 2rem; padding: 1.5rem; background: rgba(46, 204, 113, 0.1); border-left: 4px solid var(--primary); border-radius: 8px; display: none;">
+                    <!-- Results injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Farm Stages Section -->
+        <h2 style="text-align: left; margin-top: 3rem;">📋 Farm Stages</h2>
+        <div id="stage-cards" class="dashboard-grid">
+            <!-- Dynamic stages will be injected here -->
+        </div>
+
+        <!-- Recommendations Section -->
+        <div style="margin-top: 3rem;">
+            <h2 style="text-align: left;">💡 Crop Recommendations</h2>
+            <div class="dashboard-grid" style="grid-template-columns: 1fr;">
+                <div class="stage-card" style="border-left: 4px solid #f39c12;">
+                    <ul id="tips-list" style="margin-left: 1.5rem; line-height: 2; color: var(--text-secondary);">
+                        <!-- Dynamic tips will be injected here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 SmartFarm AI. Revolutionizing Agriculture With Precision & Intelligence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

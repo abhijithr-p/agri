@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SmartFarm AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas3d"></canvas>
+    
+    <header class="header-3d">
+        <div class="header-content">
+            <div class="logo-3d">
+                <span class="logo-text">🌾 SmartFarm AI</span>
+                <span class="logo-subtitle">3D Agriculture Intelligence</span>
+            </div>
+            <nav class="nav-3d">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <form id="loginForm">
+        <h1>🚜 Welcome Back</h1>
+        <p>Login to manage your farm with AI intelligence</p>
+        
+        <div class="input-group">
+            <label for="f-contact">📞 Mobile / Email</label>
+            <input type="text" id="f-contact" required placeholder="Enter your contact">
+        </div>
+        
+        <div class="input-group">
+            <label for="f-password">🔐 Password</label>
+            <input type="password" id="f-password" required placeholder="Enter your password">
+        </div>
+
+        <p id="error-msg"></p>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">
+            Login to Dashboard
+        </button>
+        
+        <p style="margin-top: 1.5rem; text-align: center; color: var(--text-secondary);">
+            Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 600;">Create One Here</a>
+        </p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

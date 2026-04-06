@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | SmartFarm AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas3d"></canvas>
+    
+    <header class="header-3d">
+        <div class="header-content">
+            <div class="logo-3d">
+                <span class="logo-text">🌾 SmartFarm AI</span>
+                <span class="logo-subtitle">3D Agriculture Intelligence</span>
+            </div>
+            <nav class="nav-3d">
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <form id="registerForm">
+        <h1>🚀 Setup Your Farm Profile</h1>
+        <p>Join the agricultural revolution with AI-powered farming</p>
+        
+        <div class="input-group">
+            <label for="f-contact">📞 Mobile / Email</label>
+            <input type="text" id="f-contact" required placeholder="Enter your contact">
+        </div>
+        
+        <div class="input-group">
+            <label for="f-password">🔐 Password</label>
+            <input type="password" id="f-password" required placeholder="Create a strong password">
+        </div>
+
+        <div class="input-group">
+            <label for="f-crop">🌾 Primary Crop</label>
+            <select id="f-crop" required>
+                <option value="">Select your crop...</option>
+                <option value="rice">🍚 Rice</option>
+                <option value="wheat">🌾 Wheat</option>
+                <option value="corn">🌽 Corn</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="f-soil">🪨 Soil Type</label>
+            <select id="f-soil" required>
+                <option value="">Select soil type...</option>
+                <option value="clay">Clay Soil</option>
+                <option value="loam">Loam Soil</option>
+                <option value="sandy">Sandy Soil</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label for="f-land">🗻 Land Type (Topography)</label>
+            <input type="text" id="f-land" required placeholder="e.g. Plain, Hilly, Slope">
+        </div>
+
+        <div class="input-group">
+            <label for="f-area">📏 Area Size (Acres/Rai)</label>
+            <input type="number" id="f-area" required min="1" placeholder="e.g. 5">
+        </div>
+
+        <div class="input-group">
+            <label for="f-location">📍 City / Location</label>
+            <input type="text" id="f-location" required placeholder="For weather data e.g. Bangalore">
+        </div>
+
+        <p id="error-msg"></p>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">
+            Create Account & Start Farming
+        </button>
+        
+        <p style="margin-top: 1.5rem; text-align: center; color: var(--text-secondary);">
+            Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;" >Sign In Here</a>
+        </p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

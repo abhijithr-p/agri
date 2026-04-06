@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech Marketplace | SmartFarm AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas3d"></canvas>
+
+    <header class="header-3d">
+        <div class="header-content">
+            <div class="logo-3d">
+                <span class="logo-text">🌾 SmartFarm AI</span>
+                <span class="logo-subtitle">AgriTech Marketplace</span>
+            </div>
+            <nav class="nav-3d">
+                <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+                <a href="#" id="logoutBtn" class="nav-link" style="color: #ff6b6b;">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 1400px; margin-top: 4rem;">
+        <!-- Create Listing Section -->
+        <h2 style="text-align: left; margin-bottom: 1.5rem; font-size: 2rem;">
+            🌽 Sell Your Harvest Directly
+        </h2>
+        <div class="dashboard-grid" style="grid-template-columns: 1fr; margin-bottom: 4rem;">
+            <div class="stage-card" style="border-left: 4px solid var(--secondary);">
+                <form id="createListingForm" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="input-group">
+                        <label>🌾 Crop Type</label>
+                        <input type="text" id="m-crop" required placeholder="e.g. Rice, Wheat, Corn">
+                    </div>
+                    <div class="input-group">
+                        <label>📦 Quantity</label>
+                        <input type="text" id="m-quantity" required placeholder="e.g. 500 kg">
+                    </div>
+                    <div class="input-group">
+                        <label>💰 Expected Price (₹)</label>
+                        <input type="number" id="m-price" required placeholder="e.g. 25000">
+                    </div>
+                    <div class="input-group">
+                        <label>📍 Location</label>
+                        <input type="text" id="m-location" required placeholder="e.g. Bangalore, Tamil Nadu">
+                    </div>
+                    <div class="input-group" style="grid-column: 1 / -1;">
+                        <label>📝 Description</label>
+                        <input type="text" id="m-description" required placeholder="Describe your crop quality and harvest details">
+                    </div>
+                    <div style="grid-column: 1 / -1;">
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            ✨ Create Listing & Go Live
+                        </button>
+                        <p id="listing-msg" style="margin-top: 1rem; font-weight: bold;"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Live Listings Section -->
+        <h2 style="text-align: left; margin-bottom: 2rem; font-size: 2rem;">
+            🛍️ Live Crop Listings
+        </h2>
+        <div id="marketplace-listings" class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div style="grid-column: 1 / -1; color: var(--text-secondary); text-align: center; padding: 3rem;">
+                ⏳ Loading marketplace listings...
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 SmartFarm AI. Direct Farm-to-Market Connections.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Redirect protection
+        if (!localStorage.getItem("user")) {
+            window.location.href = "login.html";
+        }
+        // Initialize marketplace
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof loadMarketplace === "function") loadMarketplace();
+        });
+    </script>
+</body>
+</html>
